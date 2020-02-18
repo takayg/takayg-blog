@@ -163,3 +163,24 @@
 .blog-detail a {
   color: blue;
 }
+
+.atcoder-container {
+  min-height: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.abc {
+  margin: 50px;
+  border: 2px solid #CCCCFF;
+}
+
+.atcoder-container a {
+  color: blue;
+}
+
+.atcoder-container h1 {
+  background-color: blue;
+  color: white;
+  text-align: center;
+}

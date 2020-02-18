@@ -19,3 +19,6 @@ class BlogListView(generic.ListView):
 class BlogDetailView(generic.DetailView):
     model = Post
     template_name = 'blog_detail.html'
+
+class AtcoderView(generic.TemplateView):
+    template_name = 'atcoder.html'
