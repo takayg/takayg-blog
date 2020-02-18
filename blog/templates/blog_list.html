@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>takayg's blog-list</title>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type="text/css">
+    </head>
+    <body>
+        
+        <div class="header">
+            <div class="header-logo">takayg's blog</div>
+            <div class="header-list">
+                <ul>
+                    <li><a href="{% url 'blog:index' %}" class="white-link">TOP</a></li>
+                    <li><a href="{% url 'blog:blog_list' %}" class="white-link">投稿一覧</a></li>
+                    <li>Python</li>
+                    <li>Atcoder</li>
+                    <li>その他</li>
+                </ul>
+            </div> 
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="my-div-style w-100">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                        {% for blog in blog_list %}
+                            <div class="post-preview">
+                                <a href="{% url 'blog:blog_detail' blog.pk %}">
+                                <h2 class="blog-title">
+                                    {{ blog.title }}
+                                </h2>
+                                </a>
+                                <h3 class="blog-subtitle">
+                                    {{ blog.explanation }}
+                                </h3>
+
+                                <p class="blog-meta">{{ blog.created_date }}</p>
+                            </div>
+                            <hr>
+                        {% empty %}
+                            <p>日記がありません。</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ページネーション処理 -->
+        {% if is_paginated %}
+            <div class="pagination">
+                <ul>
+                    <!-- 前ページへのリンク -->
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    <!-- ページ数表示 -->
+                    {% for page_num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == page_num %}
+                            <li class="page-item active"><a class="page-link" href="#">{{ page_num }}</a></li>
+                        {% else %}
+                            <li class="page-item"><a class="page-link" href="?page={{ page_num }}">{{ page_num }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+
+                    <!-- 次ページへのリンク -->
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        {% endif %}
+ 
+
+        <div class="footer">
+            <div class="footer-logo">takayg's blog</div>
+            <div class="footer-list">
+              <ul>
+                <li><a href="{% url 'blog:index' %}" class="white-link">TOP</a></li>
+                <li><a href="{% url 'blog:blog_list' %}" class="white-link">投稿一覧</a></li>
+                <li>Python</li>
+                <li>Atcoder</li>
+                <li>その他</li>
+              </ul>
+            </div>
+        </div>
+        
+    </body>
+</html>
