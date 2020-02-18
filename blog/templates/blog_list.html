@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="my-div-style w-100">
                     <div class="col-lg-8 col-md-10 mx-auto">
-                        {% for blog in blog_list %}
+                        {% for blog in blog_list reversed%}
                             <div class="post-preview">
                                 <a href="{% url 'blog:blog_detail' blog.pk %}">
                                 <h2 class="blog-title">
