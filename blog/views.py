@@ -13,7 +13,7 @@ class BlogListView(generic.ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        blogs = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+        blogs = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date').reverse()
         return blogs
 
 class BlogDetailView(generic.DetailView):
