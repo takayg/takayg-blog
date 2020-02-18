@@ -21,4 +21,4 @@ class BlogDetailView(generic.DetailView):
     template_name = 'blog_detail.html'
 
 class AtcoderView(generic.TemplateView):
-    template_name = "atcoder.html"
+    template_name = "blog_atcoder.html"
