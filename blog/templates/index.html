@@ -1,0 +1,76 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>takayg's blog</title>
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}" type="text/css">
+    <meta name="google-site-verification" content="LYcvWC1Dar2cPxAJPcRUwkNhiZQLKMwgjt69PFnnKMc" />
+  </head>
+  <body>
+    <div class="header">
+        <div class="header-logo">takayg's blog</div>
+        <div class="header-list">
+            <ul>
+                <li><a href="{% url 'blog:index' %}" class="white-link">TOP</a></li>
+                <li><a href="{% url 'blog:blog_list' %}" class="white-link">投稿一覧</a></li>
+                <li>Python</li>
+                <li>Atcoder</li>
+                <li>その他</li>
+            </ul>
+        </div> 
+    </div>
+
+    <div class="main">
+      <div class="copy-container">
+        <h1>takayg's <span>blog</span></h1>
+        <h2>welcome!</h2>
+        <p>~このブログでは、競技プログラミングについての記事を載せていきます。</p><p>Pythonの使い方や回答例まで色々と書いていければなと思っています。~</p>
+      </div>
+      <div class="contents-list">
+        <h1>Contents</h1>
+        <ul>
+          <li><h3>★TOP:<span>このページです。</span></h3></li>
+          <li><h3>★投稿一覧:<span>投稿を新着順にまとめてあります。</span></h3></li>
+          <li><h3>★Python:<span>Pythonを用いた基本操作の方法やアルゴリズムの解説をまとめます。</span></h3></li>
+          <li><h3>★Atcoder:<span>Atcoderのコンテストの解法で自分が理解できたものをまとめます。</span></h3></li>
+          <li><h3>★その他:<span>その他です。</span></h3></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contents">
+      <h3 class="section-title">Link</h3>
+      <div class="contents-item">
+        <img src="{% static 'img/twitter_img.jpg' %}">
+        <p><a href="https://twitter.com/takayg1" target="_blank">Twitter</a></p>
+      </div>
+      <div class="contents-item">
+        <img src={% static 'img/twitter_img.jpg' %}>
+        <p><a href="https://qiita.com/takayg1" target="_blank">Qiita</a></p>
+      </div>
+      <div class="contents-item">
+        <img src={% static 'img/twitter_img.jpg' %}>
+        <p><a href="https://atcoder.jp/users/takayg" target="_blank">Atcoder</a></p>
+      </div>
+      <div class="contents-item">
+        <img src={% static 'img/twitter_img.jpg' %}>
+        <p><a href="https://codeforces.com/profile/takayg" target="_blank">Codeforces</a></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-logo">takayg's blog</div>
+      <div class="footer-list">
+        <ul>
+          <li><a href="{% url 'blog:index' %}" class="white-link">TOP</a></li>
+          <li><a href="{% url 'blog:blog_list' %}" class="white-link">投稿一覧</a></li>
+          <li>Python</li>
+          <li>Atcoder</li>
+          <li>その他</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
